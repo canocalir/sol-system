@@ -9,6 +9,7 @@ const PlanetRotation = keyframes`
     transform: rotate(360deg);
   }
 `;
+
 type OrbitLineProps = {
   planetType: string;
 };
