@@ -2,12 +2,14 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     body{
-        background-color: #666666;
         display: flex;
-        justify-content: center;
         height: 100vh;
+        width: 100%;
         align-items: center;
+        justify-content: center;
+        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        overflow: hidden;
     }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

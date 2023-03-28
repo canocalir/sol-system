@@ -4,12 +4,14 @@ import Planets from "../pages/Planets/Planets";
 
 const AppRouter = () => {
   return (
+    <>
     <BrowserRouter>
       <Routes>
         <Route element={<Planets />} path="/" />
         <Route element={<PlanetDetail />} path="/:name" />
       </Routes>
     </BrowserRouter>
+    </>
   );
 };
 
