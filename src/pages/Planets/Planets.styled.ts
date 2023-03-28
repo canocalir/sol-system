@@ -4,9 +4,6 @@ const PlanetsContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
-    height: 70%;
-    width: 70%;
     position: relative;
 `
 
