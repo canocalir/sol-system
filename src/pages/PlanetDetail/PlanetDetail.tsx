@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 const PlanetDetail = () => {
     const {name} = useParams()
   return (
-    <div>PlanetDetail</div>
+    <div>{`This is ${name?.toUpperCase()} detail page`}</div>
   )
 }
 
