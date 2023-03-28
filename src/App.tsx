@@ -1,11 +1,14 @@
 import GlobalStyles from "./styles/globalStyles";
-import AppRouter from "./router/AppRouter";
+import AnimatedRoutes from "./router/AnimatedRoutes";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <AppRouter />
+      <Router>
+      <AnimatedRoutes />
+      </Router>
     </>
   );
 }

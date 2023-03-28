@@ -9,7 +9,7 @@ const OrbitPlanet = ({planet}:OrbitPlanetProps) => {
   return (
     <OrbitLine planetType={planet}>
         <Link to={`/${planet}`}>
-        <OrbitCircle planetType={planet}></OrbitCircle>
+        <OrbitCircle whileHover={{scale: 1.5}} planetType={planet}></OrbitCircle>
         </Link>
     </OrbitLine>
   )

@@ -12,20 +12,24 @@ const Planets = () => {
     "venus",
     "mercury",
   ];
-  const planetsMapping = planets?.map((name) => <OrbitPlanet planet={name} />);
+  const planetsMapping = planets?.map((name, index) => (
+    <OrbitPlanet planet={name} key={index} />
+  ));
   return (
-    <PlanetsContainer initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{
-      duration: 0.3,
-      ease: [0, 0.71, 0.2, 1.01],
-      scale: {
-        type: "spring",
-        damping: 5,
-        stiffness: 100,
-        restDelta: 0.001
-      }
-    }}>
+    <PlanetsContainer
+      initial={{ opacity: 0, scale: 0.2 }}
+      animate={{ opacity: 1, scale: 0.6 }}
+      transition={{
+        duration: 1,
+        ease: [0, 0.71, 0.2, 1.01],
+        scale: {
+          type: "spring",
+          damping: 5,
+          stiffness: 100,
+          restDelta: 0.001,
+        },
+      }}
+    >
       {planetsMapping}
       <SolCircle />
     </PlanetsContainer>
