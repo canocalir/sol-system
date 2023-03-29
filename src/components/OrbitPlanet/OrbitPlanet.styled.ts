@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
+import mars from "../../assets/2k_mars.jpg";
 
 const PlanetRotation = keyframes`
     100% {
@@ -107,7 +108,9 @@ const OrbitCircle = styled(motion.div)<OrbitLineProps>`
       return `
                 right: 2.5rem;
                 top: 4rem;
-                background-color: #b85d41;
+                background: url(${mars});
+                background-position: center;
+                overflow: hidden;
                 width: 1.7rem;
                 height: 1.7rem;
       `;
@@ -139,7 +142,6 @@ const OrbitCircle = styled(motion.div)<OrbitLineProps>`
             width: 3.5rem;
             height: 3.5rem;
             background-color: #ffffff;
-    
             `;
     }
   }};
