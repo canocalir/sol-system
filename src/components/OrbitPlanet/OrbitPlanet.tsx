@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { OrbitLine,OrbitCircle } from "./OrbitPlanet.styled"
 
 type OrbitPlanetProps = {
-    planet: string
+    planet: string | any
 }
 
 const OrbitPlanet = ({planet}:OrbitPlanetProps) => {
