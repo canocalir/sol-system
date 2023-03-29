@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import mars from "../../assets/2k_mars.jpg"
+import jupiter from "../../assets/2k_jupiter.jpg"
 
 type DetailPlanetProps<T> = {
   planetType: T | undefined;
@@ -63,7 +64,9 @@ const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
       `;
     } else if (planetType === "jupiter") {
       return `
-            background-color: #f1c461;
+              background: url(${jupiter});
+              background-position: top;
+              background-size: cover;
             
         `;
     } else if (planetType === "saturn") {

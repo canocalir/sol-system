@@ -6,10 +6,14 @@ const PlanetsContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   position: relative;
+  background-color: yellow;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 `;
 
 const SolCircle = styled.div`
-  width: 10rem;
+  /* width: 10rem;
   height: 10rem;
   background-color: #e7a427;
   position: absolute;
@@ -17,7 +21,7 @@ const SolCircle = styled.div`
   left: 50%;
   border-radius: 100%;
   border: 5px solid #ec730f;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 `;
 
 
