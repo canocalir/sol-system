@@ -5,13 +5,6 @@ import jupiter from "../../assets/2k_jupiter.jpg"
 import { flexWrapper } from "../../styles/globalStyles";
 
 const PlanetRotation = keyframes`
-    /* 100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  } */
   0%{
     transform: rotateZ(0deg);
   }
@@ -26,6 +19,18 @@ const PlanetRotationCorrect = keyframes`
   }
   100%{
     transform: rotateZ(0deg);
+  }
+`
+
+const hidePlanetBehindSun = keyframes`
+  0%{
+    z-index: 998;
+  }
+  25%{
+    z-index: -998;
+  }
+  100%{
+    z-index: 998;
   }
 `
 
@@ -91,12 +96,20 @@ const OrbitLine = styled.div<OrbitLineProps>`
   }
 `;
 
+const PlanetZindex = styled.div<OrbitLineProps>`
+${flexWrapper("center")};
+position: absolute;
+width: 100%;
+height: 100%;
+animation: ${hidePlanetBehindSun} ${({ planetType }) => handlePlanetAnimation(planetType)}s infinite;
+` 
+
 const OrbitCircle = styled(motion.div)<OrbitLineProps>`
   position: absolute;
   border-radius: 50%;
   border: none;
-  top: 0;
-  transform: scaleX(0.3);
+  top: 0rem;
+  transform: scaleX(0.4);
   ${({ planetType }) => {
     if (planetType === "mercury") {
       return `
@@ -135,8 +148,8 @@ const OrbitCircle = styled(motion.div)<OrbitLineProps>`
             background-position: center;
             background-size: cover;
             overflow: hidden;
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 5rem;
+            height: 5rem;
         `;
     } else if (planetType === "saturn") {
       return `
@@ -191,8 +204,8 @@ const OrbitCircleContainer = styled.div<OrbitLineProps>`
     } else if (planetType === "jupiter") {
       return `
             
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 5rem;
+            height: 5rem;
         `;
     } else if (planetType === "saturn") {
       return `
@@ -216,4 +229,4 @@ const OrbitCircleContainer = styled.div<OrbitLineProps>`
     }}}
 `
 
-export { OrbitLine, OrbitCircle, OrbitCircleContainer };
+export { OrbitLine, OrbitCircle, OrbitCircleContainer, PlanetZindex };

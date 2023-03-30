@@ -18,7 +18,7 @@ const Planets = () => {
   return (
     <PlanetsContainer
       initial={{ opacity: 0, scale: 0.2, scaleX: 3 }}
-      animate={{ opacity: 1, scale: 0.6, scaleX: 1.5, scaleY: 0.4 }}
+      animate={{ opacity: 1, scale: 0.6, scaleX: 1, scaleY: 0.4 }}
       exit={{ opacity: 0, scale: 0.2, scaleX: 3 }}
       transition={{
         duration: 2,
@@ -31,8 +31,8 @@ const Planets = () => {
         },
       }}
     >
+      <SolCircle animate={{ scaleX: 0.4 }} />
       {planetsMapping}
-     {/*  <SolCircle /> */}
     </PlanetsContainer>
   );
 };

@@ -3,6 +3,7 @@ import {
   OrbitLine,
   OrbitCircle,
   OrbitCircleContainer,
+  PlanetZindex,
 } from "./OrbitPlanet.styled";
 
 type OrbitPlanetProps = {
@@ -11,13 +12,17 @@ type OrbitPlanetProps = {
 
 const OrbitPlanet = ({ planet }: OrbitPlanetProps) => {
   return (
-    <OrbitLine planetType={planet}>
-      <Link to={`/${planet}`}>
-        <OrbitCircleContainer planetType={planet}>
-          <OrbitCircle planetType={planet}></OrbitCircle>
-        </OrbitCircleContainer>
-      </Link>
-    </OrbitLine>
+    <PlanetZindex
+      planetType={planet}
+    >
+      <OrbitLine planetType={planet}>
+        <Link to={`/${planet}`}>
+          <OrbitCircleContainer planetType={planet}>
+            <OrbitCircle planetType={planet}></OrbitCircle>
+          </OrbitCircleContainer>
+        </Link>
+      </OrbitLine>
+    </PlanetZindex>
   );
 };
 
