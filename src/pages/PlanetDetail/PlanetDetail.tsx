@@ -1,14 +1,15 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
 import { useGetPlanetDataQuery } from "../../features/planetsApi";
 import DetailPlanet from "../../components/DetailPlanet/DetailPlanet";
 import { PlanetDetailPageContainer } from "./PlanetDetail.styled";
 
 const PlanetDetail = () => {
   const { name } = useParams();
+  
   const { data, error, isLoading } = useGetPlanetDataQuery(name);
+
   const navigate = useNavigate()
-  console.log(data);
+
   return (
     <>
     <PlanetDetailPageContainer

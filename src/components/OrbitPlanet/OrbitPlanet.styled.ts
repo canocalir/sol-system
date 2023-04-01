@@ -50,7 +50,7 @@ const handlePlanetType = (planetType: string) => {
 const handlePlanetAnimation = (planetType: string) => {
   switch (planetType) {
     case "mercury":
-      return 50;
+      return 30;
     case "venus":
       return 80;
     case "earth":
@@ -74,8 +74,7 @@ const OrbitLine = styled.div<OrbitLineProps>`
   border: 5px #30e3e97a dashed;
   border-radius: 50%;
   position: absolute;
-  @media(max-width:864px){
-   
+  @media (max-width: 864px) {
   }
   -webkit-animation: ${PlanetRotation}
       ${({ planetType }) => handlePlanetAnimation(planetType)}s linear infinite,
@@ -92,10 +91,13 @@ const OrbitLine = styled.div<OrbitLineProps>`
 const PlanetBody = styled(motion.div)<OrbitLineProps>`
   border-radius: 50%;
   border: none;
-  top: 50%;
-  left: 50%;
   transform: scaleX(0.4);
   position: absolute;
+  &:hover {
+    border: 10px solid #ffffff;
+    border-color: #d2d1d4;
+    cursor: pointer;
+  }
   ${flexWrapper("flex-start")};
   ${({ planetType }) => {
     if (planetType === "mercury") {
@@ -137,6 +139,7 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
             overflow: hidden;
             width: 15rem;
             height: 15rem;
+            right: 40%;
         `;
     } else if (planetType === "saturn") {
       return `
@@ -161,6 +164,7 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
 `;
 
 const PlanetBodyContainer = styled.div<OrbitLineProps>`
+  position: absolute;
   animation: ${PlanetRotationCorrect}
     ${({ planetType }) => handlePlanetAnimation(planetType)}s infinite linear;
   ${({ planetType }) => {
@@ -169,17 +173,20 @@ const PlanetBodyContainer = styled.div<OrbitLineProps>`
                 
                 width: 4rem;
                 height: 4rem;
+                bottom: 2rem;
+                right: 2rem;
             `;
     } else if (planetType === "venus") {
       return `
-                
+                bottom: 5rem;
+                right: 1rem;  
                 width: 8rem;
                 height: 8rem;
             `;
     } else if (planetType === "earth") {
       return `
-
-                
+                bottom: 5rem;
+                left: 1.5rem; 
                 width: 8.7rem;
                 height: 8.7rem;
         `;
