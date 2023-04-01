@@ -1,3 +1,4 @@
+import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 import OrbitPlanet from "../../components/OrbitPlanet/OrbitPlanet";
 import { Heading, PlanetsContainer, SolCircle } from "./Planets.styled";
 
@@ -19,15 +20,15 @@ const Planets = () => {
     <>
     <Heading>Sol Planets</Heading>
     <PlanetsContainer
-      initial={{ opacity: 0, scale: 0.2, scaleX: 3 }}
-      animate={{ opacity: 1, scale: 0.6, scaleX: 1, scaleY: 0.4 }}
-      exit={{ opacity: 0, scale: 0.2, scaleX: 3 }}
+      initial={{ opacity: 0, scale: 0.2 }}
+      animate={{ opacity: 1, scale: 0.6, scaleY: 0.4 }}
+      exit={{ opacity: 0, scale: 0.2 }}
       transition={{
-        duration: 2,
+        duration: 1,
         ease: [0, 0.71, 0.2, 1.01],
         scale: {
           type: "spring",
-          damping: 5,
+          damping: 10,
           stiffness: 100,
           restDelta: 0.001,
         },
@@ -36,6 +37,7 @@ const Planets = () => {
       <SolCircle animate={{ scaleX: 0.4 }} />
       {planetsMapping}
     </PlanetsContainer>
+    <BottomNavbar/>
     </>
   );
 };

@@ -1,6 +1,10 @@
+import { BottomNavbarContainer } from "./BottomNavbar.styled"
+
 const BottomNavbar = () => {
   return (
-    <div>BottomNavbar</div>
+    <BottomNavbarContainer>
+        Bottom Navbar
+    </BottomNavbarContainer>
   )
 }
 

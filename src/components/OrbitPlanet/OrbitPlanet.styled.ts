@@ -74,8 +74,6 @@ const OrbitLine = styled.div<OrbitLineProps>`
   border: 5px #30e3e97a dashed;
   border-radius: 50%;
   position: absolute;
-  display: flex;
-  align-items: flex-start;
   @media(max-width:864px){
    
   }
@@ -95,7 +93,7 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
   border-radius: 50%;
   border: none;
   top: 50%;
-  right: 50%;
+  left: 50%;
   transform: scaleX(0.4);
   position: absolute;
   ${flexWrapper("flex-start")};

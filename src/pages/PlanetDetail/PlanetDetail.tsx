@@ -16,7 +16,7 @@ const PlanetDetail = () => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.2 }}
       transition={{
-        duration: 2,
+        duration: 1,
       }}
     >
       <button onClick={() => navigate(-1)}>Back</button>
