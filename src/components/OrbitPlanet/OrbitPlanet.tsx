@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import {
   OrbitLine,
-  OrbitCircle,
-  OrbitCircleContainer,
-  PlanetZindex,
+  PlanetBody,
+  PlanetBodyContainer,
 } from "./OrbitPlanet.styled";
 
 type OrbitPlanetProps = {
@@ -12,17 +11,13 @@ type OrbitPlanetProps = {
 
 const OrbitPlanet = ({ planet }: OrbitPlanetProps) => {
   return (
-    <PlanetZindex
-      planetType={planet}
-    >
-      <OrbitLine planetType={planet}>
-        <Link to={`/${planet}`}>
-          <OrbitCircleContainer planetType={planet}>
-            <OrbitCircle planetType={planet}></OrbitCircle>
-          </OrbitCircleContainer>
-        </Link>
-      </OrbitLine>
-    </PlanetZindex>
+    <OrbitLine planetType={planet}>
+      <Link to={`/${planet}`}>
+        <PlanetBodyContainer planetType={planet}>
+          <PlanetBody planetType={planet}></PlanetBody>
+        </PlanetBodyContainer>
+      </Link>
+    </OrbitLine>
   );
 };
 

@@ -1,5 +1,5 @@
 import OrbitPlanet from "../../components/OrbitPlanet/OrbitPlanet";
-import { PlanetsContainer, SolCircle } from "./Planets.styled";
+import { Heading, PlanetsContainer, SolCircle } from "./Planets.styled";
 
 const Planets = () => {
   const planets = [
@@ -16,6 +16,8 @@ const Planets = () => {
     <OrbitPlanet planet={name} key={index} />
   ));
   return (
+    <>
+    <Heading>Sol Planets</Heading>
     <PlanetsContainer
       initial={{ opacity: 0, scale: 0.2, scaleX: 3 }}
       animate={{ opacity: 1, scale: 0.6, scaleX: 1, scaleY: 0.4 }}
@@ -34,6 +36,7 @@ const Planets = () => {
       <SolCircle animate={{ scaleX: 0.4 }} />
       {planetsMapping}
     </PlanetsContainer>
+    </>
   );
 };
 

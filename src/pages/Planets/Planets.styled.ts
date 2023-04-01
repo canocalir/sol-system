@@ -1,20 +1,18 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import sol from "../../assets/2k_sun.jpg"
+import { flexWrapper } from "../../styles/globalStyles";
 
 const PlanetsContainer = styled(motion.div)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${flexWrapper('center')};
   position: relative;
-  width: 100%;
-  height: 100%;
   border-radius: 50%;
+  width: 100vw;
 `;
 
 const SolCircle = styled(motion.div)`
-  width: 21rem;
-  height: 21rem;
+  width: 25rem;
+  height: 25rem;
   background-color: #e7a427;
   border-radius: 50%;
   border: 5px solid #ec730f;
@@ -22,5 +20,14 @@ const SolCircle = styled(motion.div)`
   box-shadow: rgba(248, 213, 14, 0.815) 0px 7px 29px 0px;
 `;
 
+const Heading = styled.h1`
+  color: #ffffff;
+  letter-spacing: 0.4rem;
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: 'Bebas Neue', cursive;
+  text-transform: uppercase;
+`
 
-export { SolCircle, PlanetsContainer };
+
+export { SolCircle, PlanetsContainer, Heading };
