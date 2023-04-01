@@ -29,9 +29,9 @@ type OrbitLineProps = {
 const handlePlanetType = (planetType: string) => {
   switch (planetType) {
     case "mercury":
-      return 400;
+      return 450;
     case "venus":
-      return 600;
+      return 650;
     case "earth":
       return 800;
     case "mars":
@@ -71,7 +71,7 @@ const handlePlanetAnimation = (planetType: string) => {
 const OrbitLine = styled.div<OrbitLineProps>`
   width: ${({ planetType }) => handlePlanetType(planetType)}px;
   height: ${({ planetType }) => handlePlanetType(planetType)}px;
-  border: 5px #30e3e9 dashed;
+  border: 5px #30e3e97a dashed;
   border-radius: 50%;
   position: absolute;
   display: flex;
@@ -94,7 +94,8 @@ const OrbitLine = styled.div<OrbitLineProps>`
 const PlanetBody = styled(motion.div)<OrbitLineProps>`
   border-radius: 50%;
   border: none;
-  top: 0rem;
+  top: 50%;
+  right: 50%;
   transform: scaleX(0.4);
   position: absolute;
   ${flexWrapper("flex-start")};
