@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
+import earth from "../../assets/2k_earth_daymap.jpg"
+import venus from "../../assets/2k_venus_surface.jpg"
+import uranus from "../../assets/2k_uranus.jpg"
+import neptune from "../../assets/2k_neptune.jpg"
+import mercury from "../../assets/2k_mercury.jpg"
 import mars from "../../assets/2k_mars.jpg";
 import jupiter from "../../assets/2k_jupiter.jpg";
+import saturn from "../../assets/2k_saturn.jpg"
 import { flexWrapper } from "../../styles/globalStyles";
 
 const PlanetRotation = keyframes`
@@ -29,7 +35,7 @@ type OrbitLineProps = {
 const handlePlanetType = (planetType: string) => {
   switch (planetType) {
     case "mercury":
-      return 450;
+      return 4;
     case "venus":
       return 650;
     case "earth":
@@ -103,22 +109,29 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
     if (planetType === "mercury") {
       return `
                
-                background-color: #50330d;
+                background: url(${mercury});
+                background-position: center;
+                background-size: cover;
+                overflow: hidden;
                 width: 4rem;
                 height: 4rem;
             `;
     } else if (planetType === "venus") {
       return `
                 
-                background-color: #748f12;
+                background: url(${venus});
+                background-position: center;
+                background-size: cover;
+                overflow: hidden;
                 width: 8rem;
                 height: 8rem;
             `;
     } else if (planetType === "earth") {
       return `
-
-             
-                background-color: #1e72c0;
+                background: url(${earth});
+                background-position: center;
+                background-size: cover;
+                overflow: hidden;
                 width: 8.7rem;
                 height: 8.7rem;
         `;
@@ -127,7 +140,6 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
                 background: url(${mars});
                 background-position: center;
                 background-size: cover;
-                overflow: hidden;
                 width: 4.7rem;
                 height: 4.7rem;
       `;
@@ -143,21 +155,30 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
         `;
     } else if (planetType === "saturn") {
       return `
-            background-color: #1e72c0;
+            background: url(${saturn});
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
             width: 13rem;
             height: 13rem;
         `;
     } else if (planetType === "uranus") {
       return `
-            background-color: #1e72c0;
+            background: url(${uranus});
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
             width: 10rem;
             height: 10rem;
         `;
     } else if (planetType === "neptune") {
       return `
+            background: url(${neptune});
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
             width: 9rem;
             height: 9rem;
-            background-color: #ffffff;
             `;
     }
   }};
@@ -192,31 +213,38 @@ const PlanetBodyContainer = styled.div<OrbitLineProps>`
         `;
     } else if (planetType === "mars") {
       return `
-                
+                right: 6rem;
+                bottom: 5rem;
                 width: 4.7rem;
                 height: 4.7rem;
       `;
     } else if (planetType === "jupiter") {
       return `
-            
+            bottom: 5rem;
+            top: 0rem;
             width: 15rem;
             height: 15rem;
+            right: -2rem;
         `;
     } else if (planetType === "saturn") {
       return `
-            
+            bottom: 4rem;
+            left: 8rem;
             width: 13rem;
             height: 13rem;
         `;
     } else if (planetType === "uranus") {
       return `
-           
+            top: 4rem;
+            bottom: 4rem;
+            left: 12rem;
             width: 10rem;
             height: 10rem;
         `;
     } else if (planetType === "neptune") {
       return `
-            
+            bottom: 5rem;
+            right: 14rem;
             width: 9rem;
             height: 9rem;
            

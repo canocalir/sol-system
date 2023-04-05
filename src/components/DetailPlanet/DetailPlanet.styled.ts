@@ -1,60 +1,41 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import mars from "../../assets/2k_mars.jpg"
-import jupiter from "../../assets/2k_jupiter.jpg"
+import earth from "../../assets/2k_earth_daymap.jpg";
+import venus from "../../assets/2k_venus_surface.jpg";
+import uranus from "../../assets/2k_uranus.jpg";
+import neptune from "../../assets/2k_neptune.jpg";
+import mercury from "../../assets/2k_mercury.jpg";
+import mars from "../../assets/2k_mars.jpg";
+import jupiter from "../../assets/2k_jupiter.jpg";
+import saturn from "../../assets/2k_saturn.jpg";
 
 type DetailPlanetProps<T> = {
   planetType: T | undefined;
 };
 
-const detailPlanetHandle = (planet: string | undefined) => {
-  switch (planet) {
-    case "mercury":
-      return "#ffffff";
-    case "venus":
-      return 295;
-    case "earth":
-      return 375;
-    case "mars":
-      return "#ffffff";
-    case "jupiter":
-      return 625;
-    case "saturn":
-      return 725;
-    case "uranus":
-      return 825;
-    case "neptune":
-      return 925;
-  }
-};
-
 const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
-  background-color: ${({ planetType }) => detailPlanetHandle(planetType)};
   width: 20rem;
   height: 20rem;
   border-radius: 100%;
   ${({ planetType }) => {
     if (planetType === "mercury") {
       return `
-                right: 4rem;
-                background-color: #50330d;
-                width: 1rem;
-                height: 1rem;
+      background: url(${mercury});
+      background-position: top;
+      background-size: cover;
             `;
     } else if (planetType === "venus") {
       return `
-                right: 5rem;
-                background-color: #748f12;
-                width: 1.5rem;
-                height: 1.5rem;
+      background: url(${venus});
+      background-position: top;
+      background-size: cover;
             `;
     } else if (planetType === "earth") {
       return `
 
-                right: 6rem;
-                background-color: #1e72c0;
-                width: 1.9rem;
-                height: 1.9rem;
+      background: url(${earth});
+      background-position: top;
+      background-size: cover;
         `;
     } else if (planetType === "mars") {
       return `
@@ -71,24 +52,21 @@ const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
         `;
     } else if (planetType === "saturn") {
       return `
-            right: 12rem;
-            background-color: #1e72c0;
-            width: 3.5rem;
-            height: 3.5rem;
+      background: url(${saturn});
+      background-position: top;
+      background-size: cover;
         `;
     } else if (planetType === "uranus") {
       return `
-            right: 14rem;
-            background-color: #1e72c0;
-            width: 3.5rem;
-            height: 3.5rem;
+      background: url(${uranus});
+      background-position: top;
+      background-size: cover;
         `;
     } else if (planetType === "neptune") {
       return `
-            right: 16rem;
-            width: 3.5rem;
-            height: 3.5rem;
-            background-color: #ffffff;
+      background: url(${neptune});
+      background-position: top;
+      background-size: cover;
             `;
     }
   }};

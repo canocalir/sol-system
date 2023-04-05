@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import neptune from '../../assets/2k_neptune.jpg'
+
 
 const BottomNavbarContainer = styled.div`
   display: flex;
