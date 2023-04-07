@@ -26,8 +26,8 @@ type OrbitLineProps = {
 };
 
 const OrbitLine = styled.div<OrbitLineProps>`
-  width: ${({ planetSpecs }) => planetSpecs?.orbitDistance}px;
-  height: ${({ planetSpecs }) => planetSpecs?.orbitDistance}px;
+  width: ${({ planetSpecs }) => planetSpecs?.orbitDistance}vw;
+  height: ${({ planetSpecs }) => planetSpecs?.orbitDistance}vw;
   border: 5px #30e3e97a dashed;
   border-radius: 50%;
   position: absolute;
@@ -64,18 +64,18 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
     cursor: pointer;
   }
   ${flexWrapper("flex-start")};
-  width: ${({ planetSpecs }) => planetSpecs?.width}rem;
-  height: ${({ planetSpecs }) => planetSpecs?.height}rem;
+  width: ${({ planetSpecs }) => planetSpecs?.width}vw;
+  height: ${({ planetSpecs }) => planetSpecs?.height}vw;
 `;
 
 const PlanetBodyContainer = styled.div<OrbitLineProps>`
   position: absolute;
-  width: ${({ planetSpecs }) => planetSpecs?.width}rem;
-  height: ${({ planetSpecs }) => planetSpecs?.height}rem;
-  top: ${({ planetSpecs }) => planetSpecs?.position?.top}rem;
-  right: ${({ planetSpecs }) => planetSpecs?.position?.right}rem;
-  bottom: ${({ planetSpecs }) => planetSpecs?.position?.bottom}rem;
-  left: ${({ planetSpecs }) => planetSpecs?.position?.left}rem;
+  width: ${({ planetSpecs }) => planetSpecs?.width}vw;
+  height: ${({ planetSpecs }) => planetSpecs?.height}vw;
+  top: ${({ planetSpecs }) => planetSpecs?.position?.top}vw;
+  right: ${({ planetSpecs }) => planetSpecs?.position?.right}vw;
+  bottom: ${({ planetSpecs }) => planetSpecs?.position?.bottom}vw;
+  left: ${({ planetSpecs }) => planetSpecs?.position?.left}vw;
   animation: ${PlanetRotationCorrect}
     ${({ planetSpecs }) => planetSpecs?.animation}s infinite linear;
 `;

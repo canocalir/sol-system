@@ -34,12 +34,12 @@ const usePlanet = (planetName: string) => {
         return setPlanetSpecs({
           name: "mercury",
           animation: 30,
-          orbitDistance: 450,
+          orbitDistance: 45,
           width: 4,
           height: 4,
           position: {
             top: null,
-            right: 2,
+            right: 7,
             bottom: 2,
             left: null
           }
@@ -48,13 +48,13 @@ const usePlanet = (planetName: string) => {
         return setPlanetSpecs({
           name: "venus",
           animation: 80,
-          orbitDistance: 650,
+          orbitDistance: 65,
           width: 8,
           height: 8,
           position: {
             top: null,
-            right: 1,
-            bottom: 5,
+            right: 10,
+            bottom: 2,
             left: null
           }
         });
@@ -62,27 +62,27 @@ const usePlanet = (planetName: string) => {
         return setPlanetSpecs({
           name: "earth",
           animation: 100,
-          orbitDistance: 800,
-          width: 8.7,
-          height: 8.7,
+          orbitDistance: 80,
+          width: 9,
+          height: 9,
           position: {
             top: null,
             right: null,
-            bottom: 5,
-            left: 1.5
+            bottom: 2,
+            left: 15
           }
         });
       case "mars":
         return setPlanetSpecs({
           name: "mars",
           animation: 120,
-          orbitDistance: 900,
-          width: 4.7,
-          height: 4.7,
+          orbitDistance: 90,
+          width: 8,
+          height: 8,
           position: {
             top: null,
-            right: 6,
-            bottom: 5,
+            right: 17,
+            bottom: 2,
             left: null
           }
         });
@@ -90,55 +90,55 @@ const usePlanet = (planetName: string) => {
         return setPlanetSpecs({
           name: "jupiter",
           animation: 300,
-          orbitDistance: 1200,
+          orbitDistance: 120,
           width: 15,
           height: 15,
           position: {
             top: 0,
-            right: -2,
-            bottom: 5,
-            left: null
+            right: null,
+            bottom: 2,
+            left: 26
           }
         });
       case "saturn":
         return setPlanetSpecs({
           name: "saturn",
           animation: 400,
-          orbitDistance: 1300,
+          orbitDistance: 130,
           width: 13,
           height: 13,
           position: {
             top: null,
             right: null,
-            bottom: 4,
-            left: 8
+            bottom: 2,
+            left: 27
           }
         });
       case "uranus":
         return setPlanetSpecs({
           name: "uranus",
           animation: 500,
-          orbitDistance: 1400,
+          orbitDistance: 140,
           width: 10,
           height: 10,
           position: {
             top: 4,
             right: null,
-            bottom: 4,
-            left: 12
+            bottom: 2,
+            left: 26
           }
         });
       case "neptune":
         return setPlanetSpecs({
           name: "neptune",
           animation: 600,
-          orbitDistance: 1500,
+          orbitDistance: 150,
           width: 9,
           height: 9,
           position: {
             top: null,
-            right: 14,
-            bottom: 5,
+            right: 40,
+            bottom: 2,
             left: null
           }
         });
