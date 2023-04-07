@@ -56,6 +56,7 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
     background-size: cover;
     `;
   }}
+  
   &:hover {
     border: 10px solid #ffffff;
     border-color: #d2d1d4;
