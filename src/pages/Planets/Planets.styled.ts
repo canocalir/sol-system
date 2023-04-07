@@ -15,8 +15,8 @@ type Sol = {
 }
 
 const SolCircle = styled(motion.div)<Sol>`
-  width: ${({planetSpecs}) => planetSpecs?.width}rem;
-  height: ${({planetSpecs}) => planetSpecs?.height}rem;
+  width: ${({planetSpecs}) => planetSpecs?.width}vw;
+  height: ${({planetSpecs}) => planetSpecs?.height}vw;
   border-radius: 50%;
   border: 5px solid #ec730f;
   ${({sunImage}) => {

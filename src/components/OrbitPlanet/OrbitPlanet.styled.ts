@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
-
 import { flexWrapper } from "../../styles/globalStyles";
 
 const PlanetRotation = keyframes`
@@ -31,6 +30,7 @@ const OrbitLine = styled.div<OrbitLineProps>`
   border: 5px #30e3e97a dashed;
   border-radius: 50%;
   position: absolute;
+
   -webkit-animation: ${PlanetRotation}
       ${({ planetSpecs }) => planetSpecs?.animation}s linear infinite,
     ${({ planetSpecs }) => planetSpecs?.animation}s infinite;

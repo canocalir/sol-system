@@ -23,17 +23,16 @@ const Planets = () => {
     <>
       
       <PlanetsContainer
-        initial={{ opacity: 0, scale: 0.2 }}
-        animate={{ opacity: 1, scale: 0.6, scaleY: 0.4 }}
-        exit={{ opacity: 0, scale: 0.2 }}
+        initial={{ opacity: 0, scale: 0.1}}
+        animate={{ opacity: 1, scale: 0.45, scaleY: 0.4 }}
         transition={{
-          duration: 1,
+          duration: 2,
           ease: [0, 0.71, 0.2, 1.01],
           scale: {
             type: "spring",
-            damping: 10,
+            damping: 15,
             stiffness: 100,
-            restDelta: 0.001,
+            restDelta: 0.005,
           },
         }}
       >
