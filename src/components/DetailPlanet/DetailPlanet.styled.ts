@@ -10,13 +10,15 @@ const SaturnRings = styled.div<DetailPlanetProps<string>>`
   ${({ planetType }) => {
     if (planetType === "saturn") {
       return `
-      width: 150%;
-      height: 305px;
-      border: solid 50px #b8b08d;
+      width: 50vw;
+      height: 40vw;
+      border: solid 9vw #5c5c5b;
       border-radius: 50%;
-      top: 50%; 
+      top: -45%;
+      left: -75%; 
       position: absolute;
       transform: rotate3d(1, 0, 0, 75deg);
+      z-index: 2;
     `;
     }
   }}
@@ -24,12 +26,11 @@ const SaturnRings = styled.div<DetailPlanetProps<string>>`
 
 const DetailPlanetContainer = styled.div`
   position: relative;
-  border: 2px solid red;
 `
 
 const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
-  width: 20rem;
-  height: 20rem;
+  width: 20vw;
+  height: 20vw;
   border-radius: 100%;
   position: relative;
   ${({ planetType }) => {
@@ -41,12 +42,19 @@ const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
   }}
 `;
 
-const SaturnCircleFix = styled(motion.div)`
-  width: 20rem;
-  height: 10rem;
+const SaturnCircleFix = styled(motion.div)<DetailPlanetProps<string>>`
+  width: 20vw;
+  height: 10vw;
+  z-index: 3;
   border-radius:10rem 10rem 0 0;
   position: absolute;
-  border: 2px solid red;
+  ${({ planetType }) => {
+    return `
+    background: url(src/assets/${planetType}.jpg);
+    background-position: top;
+    background-size: cover;
+    `;
+  }}
 `;
 
 export { DetailPlanetCircle, DetailPlanetContainer, SaturnRings, SaturnCircleFix };

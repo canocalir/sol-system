@@ -8,7 +8,7 @@ const DetailPlanet = () => {
       <SaturnRings planetType={name}/>
     <DetailPlanetCircle planetType={name}>
       
-      <SaturnCircleFix/>
+      <SaturnCircleFix planetType={name}/>
     </DetailPlanetCircle>
     </DetailPlanetContainer>
   )
