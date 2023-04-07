@@ -4,17 +4,19 @@ import {
   PlanetBody,
   PlanetBodyContainer,
 } from "./OrbitPlanet.styled";
+import usePlanet from "../../hooks/usePlanet";
 
 type OrbitPlanetProps = {
   planet: string | any;
 };
 
 const OrbitPlanet = ({ planet }: OrbitPlanetProps) => {
+  const { planetSpecs } = usePlanet(planet);
   return (
-    <OrbitLine planetType={planet}>
+    <OrbitLine planetSpecs={planetSpecs}>
       <Link to={`/${planet}`}>
-        <PlanetBodyContainer planetType={planet}>
-          <PlanetBody planetType={planet}></PlanetBody>
+        <PlanetBodyContainer planetSpecs={planetSpecs}>
+          <PlanetBody planetSpecs={planetSpecs}></PlanetBody>
         </PlanetBodyContainer>
       </Link>
     </OrbitLine>

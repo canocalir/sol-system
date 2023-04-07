@@ -1,4 +1,4 @@
-import { BottomNavbarContainer, PlanetLink } from "./BottomNavbar.styled";
+import { BottomNavbarContainer, NavbarPlanetCircle, PlanetLink } from "./BottomNavbar.styled";
 
 const BottomNavbar = () => {
   const planets = [
@@ -13,9 +13,10 @@ const BottomNavbar = () => {
   ];
   return (
     <BottomNavbarContainer>
-      {planets?.map((planet) => {
+      {planets?.map((planet, index) => {
         return (
-          <PlanetLink to={`/${planet}`}>
+          <PlanetLink key={index} to={`/${planet}`}>
+            <NavbarPlanetCircle planet={planet}/>
             <h2>{planet}</h2>
           </PlanetLink>
         );

@@ -8,9 +8,7 @@ export const flexWrapper = (justfiyType:string) => `
 
 const GlobalStyles = createGlobalStyle`
     body{
-        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-        overflow: hidden;
-        
+        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);        
     }
 `;
 

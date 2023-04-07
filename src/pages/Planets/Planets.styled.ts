@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import sol from "../../assets/2k_sun.jpg"
 import { flexWrapper } from "../../styles/globalStyles";
+import { PlanetSpecsProps } from "../../hooks/usePlanet";
 
 const PlanetsContainer = styled(motion.div)`
   ${flexWrapper('center')};
@@ -10,13 +10,22 @@ const PlanetsContainer = styled(motion.div)`
   width: 100vw;
 `;
 
-const SolCircle = styled(motion.div)`
-  width: 25rem;
-  height: 25rem;
-  background-color: #e7a427;
+type Sol = {
+  sunImage: string | unknown;
+  planetSpecs: PlanetSpecsProps
+}
+
+const SolCircle = styled(motion.div)<Sol>`
+  width: ${({planetSpecs}) => planetSpecs?.width}rem;
+  height: ${({planetSpecs}) => planetSpecs?.height}rem;
   border-radius: 50%;
   border: 5px solid #ec730f;
-  background: url(${sol});
+  ${({sunImage}) => {
+    return `
+    background: url(src/assets/${sunImage}.jpg);
+    `
+  }}
+  
   box-shadow: rgba(248, 213, 14, 0.815) 0px 7px 29px 0px;
 `;
 
