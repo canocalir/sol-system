@@ -7,7 +7,6 @@ const PlanetsContainer = styled(motion.div)`
   ${flexWrapper('center')};
   position: relative;
   border-radius: 50%;
-  width: 100vw;
 `;
 
 type Sol = {
@@ -29,14 +28,5 @@ const SolCircle = styled(motion.div)<Sol>`
   box-shadow: rgba(248, 213, 14, 0.815) 0px 7px 29px 0px;
 `;
 
-const Heading = styled.h1`
-  color: #ffffff;
-  letter-spacing: 0.4rem;
-  font-size: 3rem;
-  font-weight: 600;
-  font-family: 'Bebas Neue', cursive;
-  text-transform: uppercase;
-`
 
-
-export { SolCircle, PlanetsContainer, Heading };
+export { SolCircle, PlanetsContainer };

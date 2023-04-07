@@ -1,7 +1,7 @@
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 import OrbitPlanet from "../../components/OrbitPlanet/OrbitPlanet";
 import usePlanet from "../../hooks/usePlanet";
-import { Heading, PlanetsContainer, SolCircle } from "./Planets.styled";
+import {  PlanetsContainer, SolCircle } from "./Planets.styled";
 
 const Planets = () => {
   const { planetSpecs } = usePlanet("sun");
@@ -21,7 +21,7 @@ const Planets = () => {
   ));
   return (
     <>
-      <Heading>Sol Planets</Heading>
+      
       <PlanetsContainer
         initial={{ opacity: 0, scale: 0.2 }}
         animate={{ opacity: 1, scale: 0.6, scaleY: 0.4 }}
@@ -40,6 +40,7 @@ const Planets = () => {
         <SolCircle planetSpecs={planetSpecs} sunImage={planetSpecs?.name} animate={{ scaleX: 0.4 }} />
         {planetsMapping}
       </PlanetsContainer>
+      
       <BottomNavbar />
     </>
   );

@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { flexWrapper } from "../../styles/globalStyles";
 
-const BottomNavbarContainer = styled.div`
+const NavbarPlanetsContainer = styled.div`
   ${flexWrapper("center")};
   flex-wrap: wrap;
   flex-direction: row-reverse;
   height: 10rem;
-  padding: 1rem;
   border: none;
   border-radius: 2rem;
   gap: 1rem;
@@ -49,4 +48,18 @@ const NavbarPlanetCircle = styled.div<NavbarProps>`
   }}
 `;
 
-export { BottomNavbarContainer, PlanetLink, NavbarPlanetCircle };
+const Heading = styled.h1`
+  color: #ffffff;
+  letter-spacing: 0.4rem;
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: 'Bebas Neue', cursive;
+  text-transform: uppercase;
+`
+
+const NavbarContainer = styled.div`
+  ${flexWrapper("center")};
+  flex-direction: column;
+`
+
+export { NavbarContainer, NavbarPlanetsContainer, Heading,  PlanetLink, NavbarPlanetCircle };

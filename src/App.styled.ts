@@ -6,6 +6,7 @@ export const MainContainer = styled.div`
     ${flexWrapper("center")};
     flex-direction: column;
     height: 100vh;
-    gap: 3rem;
+    padding-top: 12vh;
+    gap: 10rem;
     background: url(${stars});
 `

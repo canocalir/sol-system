@@ -1,4 +1,4 @@
-import { BottomNavbarContainer, NavbarPlanetCircle, PlanetLink } from "./BottomNavbar.styled";
+import { NavbarPlanetsContainer, NavbarContainer, Heading, NavbarPlanetCircle, PlanetLink } from "./BottomNavbar.styled";
 
 const BottomNavbar = () => {
   const planets = [
@@ -12,7 +12,9 @@ const BottomNavbar = () => {
     "mercury",
   ];
   return (
-    <BottomNavbarContainer>
+    <NavbarContainer>
+    <Heading>Sol Planets</Heading>
+    <NavbarPlanetsContainer>
       {planets?.map((planet, index) => {
         return (
           <PlanetLink key={index} to={`/${planet}`}>
@@ -21,7 +23,8 @@ const BottomNavbar = () => {
           </PlanetLink>
         );
       })}
-    </BottomNavbarContainer>
+    </NavbarPlanetsContainer>
+    </NavbarContainer>
   );
 };
 
