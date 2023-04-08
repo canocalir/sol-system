@@ -125,7 +125,7 @@ const usePlanet = (planetName: string) => {
             top: 4,
             right: null,
             bottom: 2,
-            left: 26
+            left: 30
           }
         });
       case "neptune":

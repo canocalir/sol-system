@@ -3,21 +3,66 @@ import styled from "styled-components";
 
 type DetailPlanetProps<T> = {
   planetType: T | undefined;
+  width?: number;
+  height?: number;
+  borderWidth?: number;
+  top?: number;
+  left?: number;
+};
+
+const rings = (
+  width: number | unknown,
+  height: number | unknown,
+  top: number | unknown,
+  left: number | unknown
+) => {
+  return `
+      width: ${width}vw;
+      height: ${height}vw;
+      border-radius: 50%;
+      top: ${top}%;
+      left: ${left}%; 
+      position: absolute;
+      z-index: 2;
+    `;
+};
+
+const ringsFix = (
+  width: number | unknown,
+  height: number | unknown,
+  top: number | unknown,
+  left: number | unknown
+) => {
+  return `
+      background-size: cover;
+      width: ${width}vw;
+      height: ${height}vw;
+      position: absolute;
+      top: ${top}vw;
+      left: ${left}vw; 
+      z-index: 3;
+    `;
 };
 
 const SaturnRings = styled.div<DetailPlanetProps<string>>`
-  ${({ planetType }) => {
+  ${({ planetType, width, height, borderWidth, top, left }) => {
     if (planetType === "saturn") {
       return `
-      width: 50vw;
-      height: 40vw;
-      border: solid 9vw #5c5c5b;
-      border-radius: 50%;
-      top: -45%;
-      left: -75%; 
-      position: absolute;
+      ${rings(width, height, top, left)};
+      border: solid ${borderWidth}vw #5c5c5b;
       transform: rotate3d(1, 0, 0, 75deg);
-      z-index: 2;
+    `;
+    }
+  }}
+`;
+
+const UranusRings = styled.div<DetailPlanetProps<string>>`
+  ${({ planetType, width, height, borderWidth, top, left }) => {
+    if (planetType === "uranus") {
+      return `
+      ${rings(width, height, top, left)};
+      border: solid ${borderWidth}vw #85c0e2;
+      transform: rotate3d(0.3, 8, 0, 80deg);
     `;
     }
   }}
@@ -41,18 +86,28 @@ const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
   }}
 `;
 
-const SaturnCircleFix = styled(motion.div)<DetailPlanetProps<string>>`
-  ${({ planetType }) => {
+const SaturnCircleFix = styled.div<DetailPlanetProps<string>>`
+  ${({ planetType, width, height, top, left }) => {
     if (planetType === "saturn") {
       return `
-    background: url(src/assets/${planetType}.jpg);
-    background-position: top;
-    background-size: cover;
-    width: 20vw;
-    height: 10vw;
-    z-index: 3;
-    border-radius:10rem 10rem 0 0;
-    position: absolute;
+      background-position: top;
+      border-radius: 10vw 10vw 0 0;
+      ${ringsFix(width, height, top, left)};
+      background: url(src/assets/${planetType}.jpg);
+    `;
+    }
+  }}
+`;
+
+const UranusCircleFix = styled.div<DetailPlanetProps<string>>`
+  ${({ planetType, width, height, top, left }) => {
+    if (planetType === "uranus") {
+      return `
+      background: url(src/assets/${planetType}.jpg);
+      background-position: center;
+      border-radius: 0 10vw 10vw 0;
+      transform: rotate(180deg);
+      ${ringsFix(width, height, top, left)};
     `;
     }
   }}
@@ -62,5 +117,7 @@ export {
   DetailPlanetCircle,
   DetailPlanetContainer,
   SaturnRings,
+  UranusRings,
   SaturnCircleFix,
+  UranusCircleFix,
 };

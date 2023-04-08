@@ -45,12 +45,11 @@ const OrbitLine = styled.div<OrbitLineProps>`
 
 const PlanetBody = styled(motion.div)<OrbitLineProps>`
   border-radius: 50%;
-  border: none;
   transform: scaleX(0.4);
-  position: absolute;
-  overflow: hidden;
+  position: relative;
   ${({ planetSpecs }) => {
     return `
+    z-index: 1;
     background: url(src/assets/${planetSpecs?.name}.jpg);
     background-position: center;
     background-size: cover;
