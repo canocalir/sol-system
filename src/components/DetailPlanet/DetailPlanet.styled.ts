@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import rings from "../../assets/saturn_ring.png";
 
 type DetailPlanetProps<T> = {
   planetType: T | undefined;
@@ -26,7 +25,7 @@ const SaturnRings = styled.div<DetailPlanetProps<string>>`
 
 const DetailPlanetContainer = styled.div`
   position: relative;
-`
+`;
 
 const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
   width: 20vw;
@@ -43,18 +42,25 @@ const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps<string>>`
 `;
 
 const SaturnCircleFix = styled(motion.div)<DetailPlanetProps<string>>`
-  width: 20vw;
-  height: 10vw;
-  z-index: 3;
-  border-radius:10rem 10rem 0 0;
-  position: absolute;
   ${({ planetType }) => {
-    return `
+    if (planetType === "saturn") {
+      return `
     background: url(src/assets/${planetType}.jpg);
     background-position: top;
     background-size: cover;
+    width: 20vw;
+    height: 10vw;
+    z-index: 3;
+    border-radius:10rem 10rem 0 0;
+    position: absolute;
     `;
+    }
   }}
 `;
 
-export { DetailPlanetCircle, DetailPlanetContainer, SaturnRings, SaturnCircleFix };
+export {
+  DetailPlanetCircle,
+  DetailPlanetContainer,
+  SaturnRings,
+  SaturnCircleFix,
+};
