@@ -6,7 +6,7 @@ const NavbarPlanetsContainer = styled.div`
   ${flexWrapper("center")};
   flex-wrap: wrap;
   flex-direction: row-reverse;
-  height: 10rem;
+  height: fit-content;
   border: none;
   border-radius: 2rem;
   gap: 1rem;
@@ -21,6 +21,7 @@ const PlanetLink = styled(Link)`
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.1rem;
 
   }
 `;
@@ -60,6 +61,7 @@ const Heading = styled.h1`
 const NavbarContainer = styled.div`
   ${flexWrapper("center")};
   flex-direction: column;
+  gap: 1rem;
 `
 
 export { NavbarContainer, NavbarPlanetsContainer, Heading,  PlanetLink, NavbarPlanetCircle };
