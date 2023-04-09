@@ -97,6 +97,7 @@ const NavbarContainer = styled.div`
   gap: 2rem;
   @media screen and (min-width: 1400px) {
     margin-top: -9rem;
+    margin-bottom: 2rem;
   }
 `;
 
