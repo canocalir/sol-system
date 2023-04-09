@@ -1,14 +1,13 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetPlanetDataQuery } from "../../features/planetsApi";
 import DetailPlanet from "../../components/DetailPlanet/DetailPlanet";
-import { PlanetDetailPageContainer } from "./PlanetDetail.styled";
+import { PlanetDetailInnerContainer, PlanetDetailPageContainer } from "./PlanetDetail.styled";
+import LeftNavbar from "../../components/LeftNavbar/LeftNavbar";
 
 const PlanetDetail = () => {
   const { name } = useParams();
   
   const { data, error, isLoading } = useGetPlanetDataQuery(name);
-
-  const navigate = useNavigate()
 
   return (
     <>
@@ -19,8 +18,10 @@ const PlanetDetail = () => {
         duration: 2,
       }}
     >
-      <button onClick={() => navigate(-1)}>Back</button>
-      <DetailPlanet/>
+      <LeftNavbar/>
+      <PlanetDetailInnerContainer>
+      <DetailPlanet/> 
+      </PlanetDetailInnerContainer>
     </PlanetDetailPageContainer>
     </>
   );
