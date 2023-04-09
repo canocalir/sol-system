@@ -16,7 +16,7 @@ const LeftNavbar = () => {
       ];
   return (
     <LeftNavbarContainer>
-        <BackButton onClick={() => navigate(-1)}>Back to Orbit View</BackButton>
+        <BackButton onClick={() => navigate("/")}>Back to Orbit View</BackButton>
         <Heading>Sol Planets</Heading>
         <NavbarPlanetsContainer>
       {planets?.map((planet, index) => {

@@ -147,8 +147,8 @@ const usePlanet = (planetName: string) => {
           name: "sun",
           animation: 0,
           orbitDistance: 0,
-          width: 25,
-          height: 25,
+          width: 40,
+          height: 40,
           position: {
             top: null,
             right: null,

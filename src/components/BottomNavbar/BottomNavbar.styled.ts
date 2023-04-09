@@ -10,7 +10,7 @@ const arrowDownAnimation = keyframes`
 100%{
   top: 0rem;
 }
-`
+`;
 
 const NavbarPlanetsContainer = styled.div`
   ${flexWrapper("center")};
@@ -76,7 +76,7 @@ const DetailText = styled.h4`
   border-radius: 1rem;
   padding: 0.5rem;
   cursor: pointer;
-  &:hover{
+  &:hover {
     background-color: #58c0bb;
     color: #000000;
     padding: 0.5rem;
@@ -85,22 +85,25 @@ const DetailText = styled.h4`
 `;
 
 const DetailTextContainer = styled.div`
-  ${flexWrapper('center')};
+  ${flexWrapper("center")};
   flex-direction: column;
   gap: 1rem;
   padding-top: 1rem;
-`
+`;
 
 const NavbarContainer = styled.div`
   ${flexWrapper("center")};
   flex-direction: column;
   gap: 2rem;
+  @media screen and (min-width: 1400px) {
+    margin-top: -9rem;
+  }
 `;
 
 const UpArrow = styled(BsChevronDoubleUp)`
   position: relative;
   animation: ${arrowDownAnimation} 2s infinite;
-`
+`;
 
 export {
   NavbarContainer,
