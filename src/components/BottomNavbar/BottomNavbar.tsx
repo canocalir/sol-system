@@ -8,6 +8,7 @@ import {
   DetailText,
   DetailTextContainer,
   UpArrow,
+  NavbarSaturnRings,
 } from "./BottomNavbar.styled";
 import { planets } from "../../functions/planets";
 
@@ -19,7 +20,9 @@ const BottomNavbar: FC = () => {
       {planets?.map((planet, index) => {
         return (
           <PlanetLink key={index} to={`/${planet}`}>
-            <NavbarPlanetCircle planet={planet} />
+            <NavbarPlanetCircle planet={planet}>
+              {planet === "saturn" && <NavbarSaturnRings />}
+            </NavbarPlanetCircle>
             <h2>{planet}</h2>
           </PlanetLink>
         );

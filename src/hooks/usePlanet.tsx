@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { PlanetSpecsProps } from "../types/planetTypes";
 
-const usePlanet = (planetName: string) => {
+const usePlanet = (planetName: unknown) => {
   const [planetSpecs, setPlanetSpecs] = useState<
     PlanetSpecsProps | undefined
   >();

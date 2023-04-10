@@ -20,7 +20,7 @@ const NavbarPlanetsContainer = styled.div`
   height: fit-content;
   border: none;
   border-radius: 2rem;
-  gap: 1rem;
+  gap: 1.5rem;
 `;
 
 const PlanetLink = styled(Link)`
@@ -40,6 +40,7 @@ const NavbarPlanetCircle = styled.div<NavbarProps>`
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  position: relative;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -54,6 +55,20 @@ const NavbarPlanetCircle = styled.div<NavbarProps>`
     `;
   }}
 `;
+
+const NavbarSaturnRings = styled.div`
+  width: 8rem;
+  height: 0.5rem;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.5rem;
+  background-color: #7e6656;
+  position: absolute;
+  rotate: -10deg;
+  opacity: 0.6;
+`;
+
 
 const Heading = styled.h1`
   color: #ffffff;
@@ -108,4 +123,5 @@ export {
   UpArrow,
   DetailTextContainer,
   NavbarPlanetCircle,
+  NavbarSaturnRings,
 };

@@ -5,4 +5,5 @@ export type DetailPlanetProps = {
     ringSpecs?: RingProps;
     isDetail?: boolean;
     isOrbit?: boolean;
+    isNavbar?: boolean;
   };
