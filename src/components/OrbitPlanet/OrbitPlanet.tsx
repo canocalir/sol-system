@@ -12,15 +12,13 @@ import {
   UranusRings,
 } from "../DetailPlanet/DetailPlanet.styled";
 import useRings from "../../hooks/useRings";
+import { OrbitPlanetProps } from "../../types/planetTypes";
+import { FC } from "react";
 
-type OrbitPlanetProps = {
-  planet: string | any;
-};
-
-const OrbitPlanet = ({ planet }: OrbitPlanetProps) => {
+const OrbitPlanet: FC<OrbitPlanetProps> = ({ planet }) => {
   const { planetSpecs } = usePlanet(planet);
   const { ringSpecs } = useRings(planet);
-  console.log(ringSpecs);
+
   return (
     <OrbitLine planetSpecs={planetSpecs}>
       <Link to={`/${planet}`}>

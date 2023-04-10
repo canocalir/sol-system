@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { flexWrapper } from "../../styles/globalStyles";
 import { BsChevronDoubleUp } from "react-icons/bs";
+import { NavbarProps } from "../../types/navbarTypes";
 
 const arrowDownAnimation = keyframes`
 0%{
@@ -34,10 +35,6 @@ const PlanetLink = styled(Link)`
     letter-spacing: 0.1rem;
   }
 `;
-
-type NavbarProps = {
-  planet: string;
-};
 
 const NavbarPlanetCircle = styled.div<NavbarProps>`
   width: 90px;

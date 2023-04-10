@@ -1,33 +1,10 @@
 import { useEffect, useState } from "react";
-
-export interface PlanetSpecsProps {
-  name: string;
-  animation: number;
-  orbitDistance: number;
-  width: number;
-  height: number;
-  position: {
-    top: number | null;
-    right: number | null;
-    bottom: number | null;
-    left: number | null;
-  }
-}
+import { PlanetSpecsProps } from "../types/planetTypes";
 
 const usePlanet = (planetName: string) => {
-  const [planetSpecs, setPlanetSpecs] = useState<PlanetSpecsProps>({
-    name: "",
-    animation: 0,
-    orbitDistance: 0,
-    width: 0,
-    height: 0,
-    position: {
-      top: null,
-      right: 2,
-      bottom: 2,
-      left: 0
-    }
-  });
+  const [planetSpecs, setPlanetSpecs] = useState<
+    PlanetSpecsProps | undefined
+  >();
   useEffect(() => {
     switch (planetName) {
       case "mercury":
@@ -41,8 +18,8 @@ const usePlanet = (planetName: string) => {
             top: null,
             right: 7,
             bottom: 2,
-            left: null
-          }
+            left: null,
+          },
         });
       case "venus":
         return setPlanetSpecs({
@@ -55,8 +32,8 @@ const usePlanet = (planetName: string) => {
             top: null,
             right: 10,
             bottom: 2,
-            left: null
-          }
+            left: null,
+          },
         });
       case "earth":
         return setPlanetSpecs({
@@ -69,8 +46,8 @@ const usePlanet = (planetName: string) => {
             top: null,
             right: null,
             bottom: 2,
-            left: 15
-          }
+            left: 15,
+          },
         });
       case "mars":
         return setPlanetSpecs({
@@ -83,8 +60,8 @@ const usePlanet = (planetName: string) => {
             top: null,
             right: 17,
             bottom: 2,
-            left: null
-          }
+            left: null,
+          },
         });
       case "jupiter":
         return setPlanetSpecs({
@@ -97,8 +74,8 @@ const usePlanet = (planetName: string) => {
             top: 0,
             right: null,
             bottom: 2,
-            left: 26
-          }
+            left: 26,
+          },
         });
       case "saturn":
         return setPlanetSpecs({
@@ -111,8 +88,8 @@ const usePlanet = (planetName: string) => {
             top: null,
             right: null,
             bottom: 2,
-            left: 27
-          }
+            left: 27,
+          },
         });
       case "uranus":
         return setPlanetSpecs({
@@ -125,8 +102,8 @@ const usePlanet = (planetName: string) => {
             top: 4,
             right: null,
             bottom: 2,
-            left: 30
-          }
+            left: 30,
+          },
         });
       case "neptune":
         return setPlanetSpecs({
@@ -139,8 +116,8 @@ const usePlanet = (planetName: string) => {
             top: null,
             right: 40,
             bottom: 2,
-            left: null
-          }
+            left: null,
+          },
         });
       case "sun":
         return setPlanetSpecs({
@@ -153,8 +130,8 @@ const usePlanet = (planetName: string) => {
             top: null,
             right: null,
             bottom: null,
-            left: null
-          }
+            left: null,
+          },
         });
     }
   }, [planetName]);

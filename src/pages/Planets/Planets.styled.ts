@@ -1,18 +1,13 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { flexWrapper } from "../../styles/globalStyles";
-import { PlanetSpecsProps } from "../../hooks/usePlanet";
+import { Sol } from "../../types/planetTypes";
 
 const PlanetsContainer = styled(motion.div)`
   ${flexWrapper('center')};
   position: relative;
   border-radius: 50%;
 `;
-
-type Sol = {
-  sunImage: string | unknown;
-  planetSpecs: PlanetSpecsProps
-}
 
 const SolCircle = styled(motion.div)<Sol>`
   width: ${({planetSpecs}) => planetSpecs?.width}vw;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import {
   NavbarPlanetsContainer,
   NavbarContainer,
@@ -7,21 +7,12 @@ import {
   PlanetLink,
   DetailText,
   DetailTextContainer,
-  UpArrow
+  UpArrow,
 } from "./BottomNavbar.styled";
+import { planets } from "../../functions/planets";
 
-const BottomNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const planets = [
-    "neptune",
-    "uranus",
-    "saturn",
-    "jupiter",
-    "mars",
-    "earth",
-    "venus",
-    "mercury",
-  ];
+const BottomNavbar: FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const navbarShowConditional = isOpen && (
     <NavbarPlanetsContainer>
@@ -36,13 +27,17 @@ const BottomNavbar = () => {
     </NavbarPlanetsContainer>
   );
 
+  const conditionalText = !isOpen
+    ? "Click here for details"
+    : "Click here to close";
+
   return (
     <NavbarContainer>
       <Heading>
         Sol Planets
         <DetailTextContainer>
           <DetailText onClick={() => setIsOpen(!isOpen)}>
-            {!isOpen ? "Click here for details" : "Click here to close"}
+            {conditionalText}
           </DetailText>
           {!isOpen && <UpArrow />}
         </DetailTextContainer>

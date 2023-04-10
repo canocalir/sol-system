@@ -8,9 +8,10 @@ import {
   UranusRings,
 } from "./DetailPlanet.styled";
 import useRings from "../../hooks/useRings";
+import { FC } from "react";
 
-const DetailPlanet = () => {
-  const { name } = useParams();
+const DetailPlanet: FC = () => {
+  const { name } = useParams<string>();
   const { ringSpecs } = useRings(name);
 
   return (
@@ -18,8 +19,8 @@ const DetailPlanet = () => {
       <SaturnRings planetType={name} ringSpecs={ringSpecs} isDetail />
       <UranusRings planetType={name} ringSpecs={ringSpecs} isDetail />
       <DetailPlanetCircle planetType={name}>
-        <SaturnCircleFix planetType={name} ringSpecs={ringSpecs} isDetail/>
-        <UranusCircleFix planetType={name} ringSpecs={ringSpecs} isDetail/>
+        <SaturnCircleFix planetType={name} ringSpecs={ringSpecs} isDetail />
+        <UranusCircleFix planetType={name} ringSpecs={ringSpecs} isDetail />
       </DetailPlanetCircle>
     </DetailPlanetContainer>
   );

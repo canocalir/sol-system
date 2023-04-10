@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { RingProps } from "../../hooks/useRings";
 import { rings, ringsFix } from "../../functions/rings";
-
-type DetailPlanetProps = {
-  planetType: string | unknown;
-  ringSpecs?: RingProps;
-  isDetail?: boolean;
-  isOrbit?: boolean;
-};
+import { DetailPlanetProps } from "../../types/detailTypes";
 
 const DetailPlanetContainer = styled.div`
   position: relative;

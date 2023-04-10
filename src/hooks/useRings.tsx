@@ -1,65 +1,8 @@
 import { useEffect, useState } from "react";
-
-export interface RingProps {
-  orbit: {
-    width?: number;
-    height?: number;
-    borderWidth?: number;
-    top?: number;
-    left?: number;
-    fix: {
-      width?: number;
-      height?: number;
-      top?: number | null;
-      left?: number | null;
-    };
-  };
-  detail: {
-    width?: number;
-    height?: number;
-    borderWidth?: number;
-    top?: number;
-    left?: number;
-    fix: {
-      width: number;
-      height: number;
-      top?: number | null,
-      left?: number | null
-    };
-  };
-}
-
-const initialState = {
-  orbit: {
-    width: 0,
-    height: 0,
-    borderWidth: 0,
-    top: 0,
-    left: 0,
-    fix: {
-      width: 0,
-      height: 0,
-      top: null,
-      left: null,
-    },
-  },
-  detail: {
-    width: 0,
-    height: 0,
-    borderWidth: 0,
-    top: 0,
-    left: 0,
-    fix: {
-      width: 0,
-      height: 0,
-      top: null,
-      left: null
-    },
-  },
-};
+import { RingProps } from "../types/ringTypes";
 
 const useRings = (planetType: string | unknown) => {
-  const [ringSpecs, setRingSpecs] = useState<RingProps>(initialState);
+  const [ringSpecs, setRingSpecs] = useState<RingProps | undefined>();
   useEffect(() => {
     switch (planetType) {
       case "saturn":
@@ -87,7 +30,7 @@ const useRings = (planetType: string | unknown) => {
               width: 20,
               height: 10,
               top: null,
-              left: null
+              left: null,
             },
           },
         });
@@ -116,7 +59,7 @@ const useRings = (planetType: string | unknown) => {
               width: 10,
               height: 20,
               top: null,
-              left: null
+              left: null,
             },
           },
         });

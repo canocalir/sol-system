@@ -1,21 +1,13 @@
+import { FC } from "react";
 import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 import OrbitPlanet from "../../components/OrbitPlanet/OrbitPlanet";
+import { planets } from "../../functions/planets";
 import usePlanet from "../../hooks/usePlanet";
 import { PlanetsContainer, SolCircle } from "./Planets.styled";
 
-const Planets = () => {
+const Planets: FC = () => {
   const { planetSpecs } = usePlanet("sun");
 
-  const planets = [
-    "neptune",
-    "uranus",
-    "saturn",
-    "jupiter",
-    "mars",
-    "earth",
-    "venus",
-    "mercury",
-  ];
   const planetsMapping = planets?.map((name, index) => (
     <OrbitPlanet planet={name} key={index} />
   ));
@@ -38,7 +30,7 @@ const Planets = () => {
         <SolCircle
           planetSpecs={planetSpecs}
           sunImage={planetSpecs?.name}
-          animate={{ scaleX: 0.4 }}
+          animate={{ scaleX: 0.6, scaleY: 1.5 }}
         />
         {planetsMapping}
       </PlanetsContainer>
