@@ -11,6 +11,7 @@ export const MainContainer = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     gap: 4rem;
+    padding: 1rem;
     @media screen and (max-width: 864px){
         ${flexWrapper("center")};
     }

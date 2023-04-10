@@ -5,10 +5,11 @@ const LeftNavbarContainer = styled.div`
     ${flexWrapper('center')};
     flex-direction: column;
     background-color: #000000;
-    width: 20vw;
+    width: 25rem;
     height: 100%;
     text-align: center;
     gap: 3rem;
+    padding: 1rem;
     color: #ffffff;
     @media screen and (max-width: 1200px){
         width: 100vw;

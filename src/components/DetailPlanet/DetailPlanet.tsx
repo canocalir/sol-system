@@ -7,30 +7,19 @@ import {
   UranusCircleFix,
   UranusRings,
 } from "./DetailPlanet.styled";
+import useRings from "../../hooks/useRings";
 
 const DetailPlanet = () => {
   const { name } = useParams();
+  const { ringSpecs } = useRings(name);
+
   return (
     <DetailPlanetContainer>
-      <SaturnRings
-        planetType={name}
-        width={50}
-        height={40}
-        borderWidth={9}
-        top={-45}
-        left={-75}
-      />
-      <UranusRings
-        planetType={name}
-        width={50}
-        height={35}
-        borderWidth={5}
-        top={-35}
-        left={-75}
-      />
+      <SaturnRings planetType={name} ringSpecs={ringSpecs} isDetail />
+      <UranusRings planetType={name} ringSpecs={ringSpecs} isDetail />
       <DetailPlanetCircle planetType={name}>
-        <SaturnCircleFix planetType={name} width={20} height={10} />
-        <UranusCircleFix planetType={name} width={10} height={20} />
+        <SaturnCircleFix planetType={name} ringSpecs={ringSpecs} isDetail/>
+        <UranusCircleFix planetType={name} ringSpecs={ringSpecs} isDetail/>
       </DetailPlanetCircle>
     </DetailPlanetContainer>
   );
