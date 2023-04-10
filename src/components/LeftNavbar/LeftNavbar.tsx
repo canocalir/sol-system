@@ -3,6 +3,7 @@ import {
   Heading,
   NavbarPlanetCircle,
   NavbarPlanetsContainer,
+  NavbarSaturnRings,
   PlanetLink,
 } from "../BottomNavbar/BottomNavbar.styled";
 import { BackButton, LeftNavbarContainer } from "./LeftNavbar.styled";
@@ -15,7 +16,9 @@ const LeftNavbar: FC = () => {
   const planetsMapping = planets?.map((planet, index) => {
     return (
       <PlanetLink key={index} to={`/${planet}`}>
-        <NavbarPlanetCircle planet={planet} />
+        <NavbarPlanetCircle planet={planet}>
+        {planet === "saturn" && <NavbarSaturnRings />}
+        </NavbarPlanetCircle>
         <h2>{planet}</h2>
       </PlanetLink>
     );
