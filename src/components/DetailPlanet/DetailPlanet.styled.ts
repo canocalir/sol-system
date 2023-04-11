@@ -14,7 +14,7 @@ const DetailPlanetCircle = styled(motion.div)<DetailPlanetProps>`
   position: relative;
   ${({ planetType }) => {
     return `
-    background: url(src/assets/${planetType}.jpg);
+    background: url(/${planetType}.jpg);
     background-position: top;
     background-size: cover;
     `;
@@ -102,7 +102,7 @@ const SaturnCircleFix = styled.div<DetailPlanetProps>`
               ringSpecs?.orbit?.fix?.left
             )
       }
-      background: url(src/assets/${planetType}.jpg);
+      background: url(/${planetType}.jpg);
     `;
     }
   }}
@@ -112,7 +112,7 @@ const UranusCircleFix = styled.div<DetailPlanetProps>`
   ${({ planetType, ringSpecs, isDetail }) => {
     if (planetType === "uranus") {
       return `
-      background: url(src/assets/${planetType}.jpg);
+      background: url(/${planetType}.jpg);
       background-position: center;
       border-radius: 0 10vw 10vw 0;
       transform: rotate(180deg);

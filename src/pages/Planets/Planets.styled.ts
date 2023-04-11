@@ -16,7 +16,7 @@ const SolCircle = styled(motion.div)<Sol>`
   border: 5px solid #ec730f;
   ${({sunImage}) => {
     return `
-    background: url(src/assets/${sunImage}.jpg);
+    background: url(/${sunImage}.jpg);
     `
   }}
   

@@ -50,7 +50,7 @@ const PlanetBody = styled(motion.div)<OrbitLineProps>`
   ${({ planetSpecs }) => {
     return `
     z-index: 1;
-    background: url(src/assets/${planetSpecs?.name}.jpg);
+    background: url(/${planetSpecs?.name}.jpg);
     background-position: center;
     background-size: cover;
     `;

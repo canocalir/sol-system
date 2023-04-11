@@ -49,7 +49,7 @@ const NavbarPlanetCircle = styled.div<NavbarProps>`
   }
   ${({ planet }) => {
     return `
-    background: url(src/assets/${planet}.jpg);
+    background: url(/${planet}.jpg);
     background-position: top;
     background-size: cover;
     `;
