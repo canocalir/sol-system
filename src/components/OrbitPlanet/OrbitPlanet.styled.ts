@@ -27,7 +27,7 @@ type OrbitLineProps = {
 const OrbitLine = styled.div<OrbitLineProps>`
   width: ${({ planetSpecs }) => planetSpecs?.orbitDistance}vw;
   height: ${({ planetSpecs }) => planetSpecs?.orbitDistance}vw;
-  border: 5px #30e3e97a dashed;
+  border: 3px #30e3e97a dashed;
   border-radius: 50%;
   position: absolute;
 

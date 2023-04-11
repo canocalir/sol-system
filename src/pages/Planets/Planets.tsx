@@ -4,6 +4,7 @@ import OrbitPlanet from "../../components/OrbitPlanet/OrbitPlanet";
 import { planets } from "../../functions/planets";
 import usePlanet from "../../hooks/usePlanet";
 import { PlanetsContainer, SolCircle } from "./Planets.styled";
+import IconsSocial from "../../components/IconsSocial/IconsSocial";
 
 const Planets: FC = () => {
   const { planetSpecs } = usePlanet("sun");
@@ -13,6 +14,7 @@ const Planets: FC = () => {
   ));
   return (
     <>
+    <IconsSocial/>
       <PlanetsContainer
         initial={{ opacity: 0, scale: 0.1 }}
         animate={{ opacity: 1, scale: 0.45, scaleY: 0.4 }}

@@ -5,7 +5,7 @@ import { flexWrapper } from "../../styles/globalStyles";
 const PlanetDetailPageContainer = styled(motion.div)`
   ${flexWrapper("space-between")};
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   @media screen and (max-width: 1200px){
         flex-direction: column;
     }
