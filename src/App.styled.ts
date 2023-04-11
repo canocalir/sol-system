@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { flexWrapper } from "./styles/globalStyles";
-import stars from "../public/2k_stars_milky_way.jpg"
+import stars from "./assets/stars.jpg"
 
 export const MainContainer = styled.div`
     ${flexWrapper("center")};
