@@ -1,10 +1,11 @@
 # Sol System Planets
 ### Used Tech and Libraries
 * React JS
-* Redux Toolkit
-* Firebase
+* Redux Toolkit / RTK Query
 * TypeScript
 * Styled Components
+* Framer Motion
+* React Icons
 
 ## [Click here for live demo](https://sol-system.vercel.app/) Work In Progress
 
